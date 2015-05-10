@@ -25,7 +25,7 @@ setkey(DT, 'DateTime')
 par(mfrow = c(2, 2))
 with(DT, {
   par(mar = c(4,4,4,2), oma = c(3,2,2,2), cex = 0.5)
-  plot(DateTime, Global_active_power, type = 'l', ylab = 'Global Active Power (kilowatts)')
+  plot(DateTime, Global_active_power, type = 'l', ylab = 'Global Active Power (kilowatts)', xlab = '')
   plot(DateTime, Voltage, type = 'l', ylab = 'Voltage')
   {with(DT, plot(DateTime, Sub_metering_1, type = 'l', xlab = '', ylab = 'Energy sub metering',col = 'grey45'))
    with(DT, lines(DateTime, Sub_metering_2, col = 'red', xlab = ''))
