@@ -9,7 +9,9 @@ system.time(DT <- fread("household_power_consumption.txt", header = TRUE, colCla
 print(object.size(DT), units="Mb")
 
 setkey(DT, 'Date', 'Time')
+# select only those two dates
 DT <- DT[.(c('1/2/2007','2/2/2007')), ]
+# convert to numeric columns 3 to 9
 DT[, (c(3:9)) := lapply(.SD, as.numeric), .SDcols = c(3:9)]
 
 datetime <- paste(DT[,Date], DT[,Time])
